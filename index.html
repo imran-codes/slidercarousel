@@ -1,426 +1,271 @@
 <style>
-  /* Defaults */
-
-  a {
-    color: #5b7083;
-    transition: all .25s ease-in-out;
-  }
-
-
-  /* Slideshow container */
-  .slideshow-container {
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-
-    opacity: 0.8;
-  }
-
-
-
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
-
-  /* Next & previous buttons */
-  .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-
-  @media screen and (max-width: 760px) {
-
+    /* Defaults */
+    
+    a {
+        color: #5b7083;
+        transition: all .25s ease-in-out;
+    }
+    /* Slideshow container */
+    
+    .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+        opacity: 0.8;
+    }
+    /* Hide the images by default */
+    
+    .mySlides {
+        display: none;
+    }
+    /* Next & previous buttons */
+    
     .prev,
     .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-
-      margin-right: 30px;
-      padding-left: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
     }
-
-
-  }
-
-  @media screen and (max-width: 500px) {
-
-    .prev,
+    
+    @media screen and (max-width: 760px) {
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-right: 30px;
+            padding-left: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding-right: 0px;
+            padding-left: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding-right: 10px;
+            padding-left: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+    }
+    /* Position the "next button" to the right */
+    
     .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-
-      padding-right: 0px;
-      padding-left: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
+        right: 0;
+        border-radius: 3px 0 0 3px;
     }
-
-
-  }
-
-
-  @media screen and (max-width: 400px) {
-
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      width: auto;
-
-      padding-right: 10px;
-      padding-left: 10px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
+    /* Position the "prev button" to the left */
+    
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
     }
-
-
-  }
-
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* Position the "prev button" to the left */
-  .prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-
-
-  /* Fading animation */
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  @-webkit-keyframes fade {
-    from {
-      opacity: .4
+    /* On hover, add a black background color with a little bit see-through */
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
     }
-
-    to {
-      opacity: 1
+    /* Fading animation */
+    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
     }
-  }
-
-  @keyframes fade {
-    from {
-      opacity: .4
+    
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
     }
-
-    to {
-      opacity: 1
+    
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
     }
-  }
-
-
-  .ImageDetail {
-    width: 30px;
-    height: 40px;
-    position: revert;
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 10px;
-  }
-
-  @media screen and (max-width: 767px) {
-    img.ImageDetail {
-      width: 25px !important;
-      height: 25px !important;
-      position: revert !important;
-      padding: 2px !important;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    img.ImageDetail {
-      width: 15px !important;
-      height: 15px !important;
-      position: revert !important;
-      padding: 1px !important;
-      margin-top: 0.2em !important;
-    }
-  }
-
-  .row {
-    margin: 0;
-    width: 100%;
-    overflow: hidden;
-    padding-left: 35px;
-  }
-
-  .column {
-    float: left;
-    padding: 5px;
-    padding-left: 20px;
-  }
 </style>
 
 <body>
 
-  <!-- Slideshow container -->
-  <div class="slideshow-container">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
 
-    <!-- Full-width images -->
-    <div class="mySlides fade">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787745945&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787745945;Type:TVLMedia)]</i></span>
+        <!-- Full-width images -->
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1607520389489-6c163c200204?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.unsplash.com/photo-1607520389489-6c163c200204?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80">
+        </div>
+
+
+
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <div class="mySlides fade">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787746170&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787746170;Type:TVLMedia)]</i></span>
+
+    <!-- The dots/circles -->
+    <div id="dotsCarousel" class="dotsCarousel">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
     </div>
 
-    <div class="mySlides fade">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787746418&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787746418;Type:TVLMedia)]</i></span>
-    </div>
-
-    <div class="mySlides fade">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787746629&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787746629;Type:TVLMedia)]</i></span>
-    </div>
+    <!-- End of slider -->
 
 
+    <script>
+        var slideIndex = 1;
 
+        var myTimer;
 
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
+        var slideshowContainer;
 
+        window.addEventListener("load", function() {
+            showSlides(slideIndex);
+            myTimer = setInterval(function() {
+                plusSlides(1)
+            }, 4000);
 
-  <!-- The dots/circles -->
-  <div id="dotsCarousel" class="dotsCarousel">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-  </div>
+            //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+            slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
 
-  <!-- End of slider -->
+            //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+            slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
 
-  <p>
-    <i>Welcome to The People&rsquo;s Rules of Live TV.</i></p>
-  <p>
-    But before you take a look at the rules that help make live TV more enjoyable, don&rsquo;t forget the rule that
-    makes
-    it legal. Because, whatever live TV you enjoy &ndash; and no matter what channel, streaming service or device
-    you&rsquo;re watching on &ndash; you need to be covered by a TV Licence. It also allows you to watch BBC Programmes
-    on
-    iPlayer.</p>
-  <p>
-    So, if you don&rsquo;t already have a TV Licence, buy yours now.</p>
-  <div class="btnGrp" style="margin: 0.5em 0em 1em">
-    <a class="arrowBtn pageKey_update" href="/cs/pay-for-your-tv-licence/index.app" title="Buy a TV Licence"><span>Buy a
-        TV Licence</span> </a></div>
-  <br />
-  <h3>
-    When you need a TV Licence</h3>
-  <p>
-    <span
-      id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLDetail&amp;_cid_=1369787747820&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-        Included(Id:1369787747820;Type:TVLMedia)]</i></span>Watch or record TV programmes live on any channel<br />
-    (e.g. ITV, E4 or Dave - not just the BBC)?</p>
-  <p>
-    <span
-      id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLDetail&amp;_cid_=1369787748026&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-        Included(Id:1369787748026;Type:TVLMedia)]</i></span>Watch or record TV programmes live on any paid-for TV
-    service<br />
-    (e.g. Sky, Virgin or BT)?</p>
-  <p>
-    <span
-      id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLDetail&amp;_cid_=1369787748232&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-        Included(Id:1369787748232;Type:TVLMedia)]</i></span>Watch (or &#39;stream&#39;)TV programmes live on an online
-    TV
-    service<br />
-    (e.g. ITV Hub, All 4, YouTube, Amazon Prime Video, Now TV or Sky Go)?</p>
-  <p>
-    <span
-      id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLDetail&amp;_cid_=1369787748439&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-        Included(Id:1369787748439;Type:TVLMedia)]</i></span>Watch or record TV programmes live on foreign channels, via
-    satellite or online streaming?</p>
-  <p>
-    <span
-      id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLDetail&amp;_cid_=1369787748645&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-        Included(Id:1369787748645;Type:TVLMedia)]</i></span>Download or watch any BBC programmes on iPlayer?</p>
-  <div style="margin: -0.77em -1.54em 0.77em; padding: 0.5em; border-bottom: 0.077em solid rgb(190, 215, 223);">
-    &nbsp;</div>
-  <br />
-  <p style="text-align: center;">
-    This applies to any device you may use.</p>
-  <div class="row">
-    <div class="column">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787595620&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787595620;Type:TVLMedia)]</i></span></div>
-    <div class="column">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787595828&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787595828;Type:TVLMedia)]</i></span></div>
-    <div class="column">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787596036&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787596036;Type:TVLMedia)]</i></span></div>
-    <div class="column">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787596277&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787596277;Type:TVLMedia)]</i></span></div>
-    <div class="column">
-      <span
-        id="_CSEMBEDTYPE_=inclusion&amp;_PAGENAME_=TVL%2FTVLMedia%2FTVLMediaImage&amp;_cid_=1369787596491&amp;_c_=TVLMedia&amp;_subtype_=Media&amp;_deps_=exists"><i>[Asset
-          Included(Id:1369787596491;Type:TVLMedia)]</i></span></div>
-  </div>
-  <div style="margin: -0.77em -1.54em 0.77em; padding: 0.5em; border-bottom: 0.077em solid rgb(190, 215, 223);">
-    &nbsp;</div>
-  <br />
-  <h4 style="font-size: 116%;">
-    Doing any of the above? The rules say you need a TV Licence.</h4>
-  <p>
-    That way, you&rsquo;ll be legally covered to enjoy all the drama of live TV. Like a last-minute penalty or soap
-    cliffhanger. Or the uproar over a judge&rsquo;s score. It&rsquo;ll also cover you if you&rsquo;re catching up on BBC
-    programmes on iPlayer.</p>
-  <br />
-  <div class="btnGrp" style="margin: 0.5em 0em 1em">
-    <a class="arrowBtn pageKey_update" href="/cs/pay-for-your-tv-licence/index.app" title="Buy a TV Licence"><span>Buy a
-        TV Licence</span> </a></div>
+            slideshowContainer.addEventListener('mouseenter', pause)
+            slideshowContainer.addEventListener('mouseleave', resume)
+        })
+
+        // NEXT AND PREVIOUS CONTROL
+        function plusSlides(n) {
+            clearInterval(myTimer);
+            if (n < 0) {
+                showSlides(slideIndex -= 1);
+            } else {
+                showSlides(slideIndex += 1);
+            }
+
+            //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+
+            if (n === -1) {
+                myTimer = setInterval(function() {
+                    plusSlides(n + 2)
+                }, 4000);
+            } else {
+                myTimer = setInterval(function() {
+                    plusSlides(n + 1)
+                }, 4000);
+            }
+        }
+
+        //Controls the current slide and resets interval if needed
+        function currentSlide(n) {
+            clearInterval(myTimer);
+            myTimer = setInterval(function() {
+                plusSlides(n + 1)
+            }, 4000);
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        pause = () => {
+            clearInterval(myTimer);
+        }
+
+        resume = () => {
+            clearInterval(myTimer);
+            myTimer = setInterval(function() {
+                plusSlides(slideIndex)
+            }, 4000);
+        }
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-  <script>
-    var slideIndex = 1;
-
-    var myTimer;
-
-    var slideshowContainer;
-
-    window.addEventListener("load", function () {
-      showSlides(slideIndex);
-      myTimer = setInterval(function () { plusSlides(1) }, 4000);
-
-      //COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
-      slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
-
-      //UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
-      slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
-
-      slideshowContainer.addEventListener('mouseenter', pause)
-      slideshowContainer.addEventListener('mouseleave', resume)
-    })
-
-    // NEXT AND PREVIOUS CONTROL
-    function plusSlides(n) {
-      clearInterval(myTimer);
-      if (n < 0) {
-        showSlides(slideIndex -= 1);
-      } else {
-        showSlides(slideIndex += 1);
-      }
-
-      //COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
-
-      if (n === -1) {
-        myTimer = setInterval(function () { plusSlides(n + 2) }, 4000);
-      } else {
-        myTimer = setInterval(function () { plusSlides(n + 1) }, 4000);
-      }
-    }
-
-    //Controls the current slide and resets interval if needed
-    function currentSlide(n) {
-      clearInterval(myTimer);
-      myTimer = setInterval(function () { plusSlides(n + 1) }, 4000);
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-
-    pause = () => {
-      clearInterval(myTimer);
-    }
-
-    resume = () => {
-      clearInterval(myTimer);
-      myTimer = setInterval(function () { plusSlides(slideIndex) }, 4000);
-    }
-
-
-
-
-
-
-    $('#dotsCarousel').hide();
-
-  </script>
+        $('#dotsCarousel').hide();
+    </script>
