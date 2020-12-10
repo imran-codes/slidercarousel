@@ -1,3 +1,3 @@
 # slidercarousel
-Slider Carousel for TV Licensing Website 
-As seen on https://www.tvlicensing.co.uk/lovelive
+Slider Carousel 
+As seen on https://slider.seo-genius.co.uk/SliderCarousel.html
